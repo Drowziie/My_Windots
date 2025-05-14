@@ -5,6 +5,8 @@
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 [fetch]
     prune = true
+[safe]
+	directory = C:/Users/zacha/AppData/Local/
 [user]
-	email = 39483124+scottmckendry@users.noreply.github.com
-	name = Scott McKendry
+	email = zachariepicard@live.ca
+	name = Zacharie Picard

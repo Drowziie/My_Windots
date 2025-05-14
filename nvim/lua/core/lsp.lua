@@ -25,4 +25,5 @@ vim.lsp.enable({
     "terraformls",
     "ts_ls",
     "yamlls",
+    "zls",
 })

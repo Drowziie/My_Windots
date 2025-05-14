@@ -21,6 +21,7 @@ return {
                 templ = { "templ" },
                 toml = { "taplo" },
                 yaml = { "prettier" },
+                zig = { "zig fmt" },
             },
 
             format_after_save = function()

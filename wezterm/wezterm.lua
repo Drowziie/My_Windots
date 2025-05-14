@@ -46,7 +46,7 @@ config.win32_system_backdrop = "Acrylic"
 -- Performance Settings
 config.max_fps = 144
 config.animation_fps = 60
-config.cursor_blink_rate = 250
+config.cursor_blink_rate = 350
 
 -- Tab Bar Configuration
 config.enable_tab_bar = true
