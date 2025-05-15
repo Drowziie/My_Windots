@@ -43,6 +43,7 @@ return {
             "terraform-ls",
             "typescript-language-server",
             "yaml-language-server",
+            "zls"
         }
 
         if vim.fn.has("unix") == 1 then

@@ -51,7 +51,7 @@ $chocoDeps = @(
     "ripgrep"
     "sqlite"
     "wezterm"
-    "zig"
+    #"zig"
     "zoxide"
 )
 
@@ -118,5 +118,9 @@ git config --global user.name $currentGitName | Out-Null
 # Install bat themes
 bat cache --clear
 bat cache --build
+
+# Install zvm for Zig version management
+irm https://raw.githubusercontent.com/tristanisham/zvm/master/install.ps1 | iex
+
 
 .\altsnap\createTask.ps1 | Out-Null
