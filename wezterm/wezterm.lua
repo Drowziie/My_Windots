@@ -87,6 +87,7 @@ end)
 -- Keybindings
 config.keys = {
     { key = "v", mods = "CTRL", action = wezterm.action({ PasteFrom = "Clipboard" }) },
+    { key = "w", mods = "CTRL|SHIFT|ALT", action = wezterm.action.CloseCurrentPane({ confirm = false }) },
 }
 
 -- Default Shell Configuration

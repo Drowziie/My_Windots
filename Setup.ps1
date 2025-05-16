@@ -120,7 +120,20 @@ bat cache --clear
 bat cache --build
 
 # Install zvm for Zig version management
-irm https://raw.githubusercontent.com/tristanisham/zvm/master/install.ps1 | iex
+Write-Host "Installing ZVM (Zig Version Manager)..."
+try {
+    irm https://raw.githubusercontent.com/tristanisham/zvm/master/install.ps1 | iex
+    # Initialize ZVM and install latest stable Zig
+    $zigVersions = Invoke-RestMethod "https://ziglang.org/download/index.json"
+    $latestStable = ($zigVersions.PSObject.Properties | Where-Object { $_.Value.PSObject.Properties['x86_64-windows'] -and $_.Name -match '^\d+\.\d+\.\d+$' } | Sort-Object { [Version]$_.Name } -Descending)[0].Name
+
+    zvm install --zls --full $latestStable    # Refresh PATH to include newly installed Zig
+    $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
+}
+catch {
+    Write-Warning "Failed to install/configure ZVM. Error: $_"
+}
+
 
 
 .\altsnap\createTask.ps1 | Out-Null
